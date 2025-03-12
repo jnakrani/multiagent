@@ -18,6 +18,10 @@ class CourseRequest(BaseModel):
     target_audience: str
     course_duration: str
 
+@app.get("/")
+async def normal_message():
+    return {"message": "Welcome to the Course Generation API!"}
+
 @app.post("/generate-course")
 async def generate_course(course_input: CourseRequest):
     try:
